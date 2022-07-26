@@ -1,0 +1,31 @@
+.about {
+  padding: 120px 0 150px;
+  background-color: #2A2A2A;
+
+  &__info {
+    width: 800px;
+    padding: 60px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.47);
+    border-radius: 29px;
+    margin: 0 auto 80px;
+  }
+  &__title {
+    font-family: "Avenir Next Cyr", sans-serif;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 54px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 50px;
+  }
+  &__text {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+}
