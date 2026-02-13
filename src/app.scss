@@ -1,55 +1,89 @@
+/* ===== Theme Variables ===== */
+:root[data-theme="dark"] {
+  --bg-primary: #0f172a;
+  --bg-secondary: #1e293b;
+  --bg-card: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --accent: #38bdf8;
+  --accent-hover: #7dd3fc;
+  --accent-gradient: linear-gradient(135deg, #38bdf8, #818cf8);
+  --border: #334155;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent: #2563eb;
+  --accent-hover: #3b82f6;
+  --accent-gradient: linear-gradient(135deg, #2563eb, #7c3aed);
+  --border: #e2e8f0;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Reset & Base ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  list-style-type: none;
-  text-decoration: none;
 }
 
-.container {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 25px;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #414141;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background 0.3s, color 0.3s;
+  line-height: 1.6;
 }
 
-.swiper {
-  width: 100%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+ul, ol {
+  list-style: none;
 }
 
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 300px;
-  height: 300px;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.swiper-slide img {
+img {
+  max-width: 100%;
   display: block;
+}
+
+.container {
+  max-width: 1100px;
   width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.swiper-button-prev {
-  left: 90px !important;
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.swiper-button-next {
-  right: 90px !important;
-}
-
+/* ===== Header ===== */
 @import "./Layout/Header/header";
 
+/* ===== Sections ===== */
 @import "./pages/Main/Home/home";
-@import "./pages/Main/Skills/skills";
 @import "./pages/Main/Skills/skills";
 @import "./pages/Main/Works/works";
 @import "./pages/Main/Portfolio/portfolio";
-@import "./pages/About/about";
 
+/* ===== Footer ===== */
 @import "./Layout/Footer/footer";

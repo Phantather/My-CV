@@ -1,38 +1,112 @@
 .header {
-  position: absolute;
-  z-index: 2;
-  top: 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  z-index: 100;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  transition: background 0.3s;
 
   &__nav {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &__list {
     display: flex;
-    column-gap: 145px;
-    list-style-type: none;
+    gap: 2rem;
+
     &-item {
-      font-family: Montserrat, sans-serif;
-      font-weight: 300;
-      font-size: 18px;
-      line-height: 21px;
+      list-style: none;
     }
   }
 
   &__link {
-    color: #E4E4E4;
-    transition: .5s;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0;
+
     &:hover {
-      color: #00C4F0;
-      transition: .5s;
-    }
-  }
-  &__link {
-    &.active {
-      color: #00C4F0;
+      color: var(--accent);
     }
   }
 
+  &__theme-btn {
+    background: none;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--accent);
+    font-size: 1.2rem;
+    transition: border-color 0.3s, color 0.3s;
+
+    &:hover {
+      border-color: var(--accent);
+    }
+  }
+
+  &__burger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    &__burger {
+      display: flex;
+    }
+
+    &__list {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      gap: 0;
+
+      &--open {
+        display: flex;
+      }
+
+      &-item {
+        text-align: center;
+        padding: 0.75rem 0;
+      }
+    }
+  }
 }

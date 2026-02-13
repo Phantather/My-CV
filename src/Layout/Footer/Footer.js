@@ -1,71 +1,48 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import { FiMail, FiPhone, FiLinkedin, FiArrowUp } from 'react-icons/fi';
 
 const Footer = () => {
-    return (
-        <footer className="footer">
-            <div className="container">
-                <nav className="footer__nav">
-                    <div className="footer__blocks">
-                        <ul className="footer__list">
-                            <li className="footer__list-item">
-                                <NavLink to={'/'} className="footer__link">
-                                    Main
-                                </NavLink>
-                            </li>
-                            <li className="footer__list-item">
-                                <NavLink to={'/about'} className="footer__link">
-                                    About me
-                                </NavLink>
-                            </li>
-                            <li className="footer__list-item">
-                                <NavLink to={'portfolio'} className="footer__link">
-                                    Portfolio
-                                </NavLink>
-                            </li>
-                            <li className="footer__list-item">
-                                <NavLink to={'/contact'} className="footer__link">
-                                    Contact
-                                </NavLink>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="footer__blocks">
-                        <ul className="footer__list">
-                            <li className="footer__list-item">
-                                Contact:
-                            </li>
-                            <li className="footer__list-item">
-                                <a target="_blank" href="mailto:akdil.hstech@gmail.com" className="footer__link">
-                                    Email: akdil.hstech@gmail.com
-                                </a>
-                            </li>
-                            <li className="footer__list-item">
-                                <a target="_blank" href="https://www.instagram.com/kbnchbkv.00/"
-                                   className="footer__link">
-                                    Inst: kbnchbkv.00
-                                </a>
-                            </li>
-                            <li className="footer__list-item">
-                                <a target="_blank" href="tel:996501251221" className="footer__link">
-                                    Calls: +996 (501) - 25 - 12 - 21
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="" className="footer__up">
-                        <svg width="24" height="26" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M22.5 11.5L12 1L1.5 11.5" stroke="#E4E4E4" stroke-width="2" stroke-linecap="round"
-                                  stroke-linejoin="round"/>
-                            <path d="M12 1L12 25" stroke="#E4E4E4" stroke-width="2" stroke-linecap="round"
-                                  stroke-linejoin="round"/>
-                        </svg>
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
-                    </a>
-                </nav>
-            </div>
-        </footer>
-    );
+  return (
+    <footer className="footer" id="contact">
+      <div className="container">
+        <h2 className="section-title">Contact</h2>
+        <div className="footer__content">
+          <div className="footer__info">
+            <a href="mailto:akdil.hstech@gmail.com" className="footer__link">
+              <FiMail /> akdil.hstech@gmail.com
+            </a>
+            <a href="tel:+996501251221" className="footer__link">
+              <FiPhone /> +996 (501) 25-12-21
+            </a>
+            <a
+              href="https://www.linkedin.com/in/akdilkubanychbekov"
+              target="_blank"
+              rel="noreferrer"
+              className="footer__link"
+            >
+              <FiLinkedin /> LinkedIn
+            </a>
+          </div>
+          <div className="footer__languages">
+            <h4>Languages</h4>
+            <p>Kyrgyz - Native</p>
+            <p>Russian - Full Professional</p>
+            <p>German - Elementary</p>
+          </div>
+        </div>
+        <div className="footer__bottom">
+          <p>&copy; 2026 Akdil Kubanychbekov. All rights reserved.</p>
+          <button className="footer__up" onClick={scrollToTop}>
+            <FiArrowUp />
+          </button>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

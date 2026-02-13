@@ -1,95 +1,133 @@
 .works {
-  padding: 40px 0 114px;
+  padding: 80px 0;
+  background: var(--bg-primary);
 
-  &__content {
+  &__timeline {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    row-gap: 20px;
-  }
-
-  &__title {
-    font-family: "Avenir Next Cyr", sans-serif;
-    font-weight: normal;
-    font-size: 48px;
-    line-height: 54px;
-    text-align: center;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    margin-bottom: 80px;
-  }
-
-  &__list {
-    margin: 60px 0 80px;
-    display: flex;
-    justify-content: center;
-    column-gap: 50px;
-
-    &-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      column-gap: 9px;
-      font-family: "Avenir Next Cyr", sans-serif;
-      font-size: 20px;
-      line-height: 24px;
-      color: #E4E4E4;
-      padding: 10px 70px;
-      transition: .3s;
-      cursor: pointer;
-      border: 1px solid transparent;
-
-      &_active {
-        color: #00C4F0;
-        border: 1px solid #00C4F0;
-      }
-
-      &:hover {
-        color: #00C4F0;
-        transition: .3s;
-        border: 1px solid #00C4F0;
-      }
-    }
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   &__card {
-    width: 800px;
-    background: #2A2A2A;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.47);
-    border-radius: 15px;
-    padding: 50px 30px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #FFFFFF;
+    gap: 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
 
-    &-title {
-      font-family: Montserrat, sans-serif;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 24px;
-      line-height: 29px;
+    &:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 20px var(--shadow);
     }
 
-    &-descr {
-      font-family: Montserrat, sans-serif;
-      font-style: normal;
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 21px;
-      margin: 25px 0;
+    &-image {
+      flex-shrink: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--accent);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 11px;
+      }
     }
 
-    &-item {
-      width: 70%;
+    &-body {
+      flex: 1;
     }
 
     &-company {
-      width: 200px;
-      background: #2C2C2C;
-      img {
-        width: 100%;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    &-role {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    &-period {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    &-list {
+      list-style: disc;
+      padding-left: 1.2rem;
+
+      li {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        margin-bottom: 0.25rem;
+        line-height: 1.5;
       }
+    }
+  }
+
+  &__education {
+    max-width: 800px;
+    margin: 3rem auto 0;
+  }
+
+  &__edu-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  &__edu-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+  }
+
+  &__edu-period {
+    margin-top: 0.25rem;
+    font-size: 0.8rem !important;
+    color: var(--text-secondary);
+  }
+}
+
+@media (max-width: 600px) {
+  .works__card {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-image {
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
     }
   }
 }
