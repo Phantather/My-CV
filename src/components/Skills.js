@@ -5,14 +5,14 @@ import {
   SiReact,
   SiNextdotjs,
   SiNodedotjs,
-  SiTailwindcss,
-  SiPostgresql,
+  SiRedux,
+  SiAntdesign,
   SiFirebase,
   SiGitlab,
   SiGit,
 } from 'react-icons/si';
-import { AiFillHtml5 } from 'react-icons/ai';
-import { IoLogoCss3 } from 'react-icons/io';
+import { TbAtom, TbLayoutDashboard } from 'react-icons/tb';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const skills = [
   { name: 'JavaScript', icon: <SiJavascript color="#F7DF1E" /> },
@@ -20,20 +20,22 @@ const skills = [
   { name: 'React', icon: <SiReact color="#61DAFB" /> },
   { name: 'Next.js', icon: <SiNextdotjs /> },
   { name: 'Node.js', icon: <SiNodedotjs color="#339933" /> },
-  { name: 'HTML5', icon: <AiFillHtml5 color="#E34F26" /> },
-  { name: 'CSS3', icon: <IoLogoCss3 color="#1572B6" /> },
-  { name: 'Tailwind', icon: <SiTailwindcss color="#06B6D4" /> },
-  { name: 'PostgreSQL', icon: <SiPostgresql color="#4169E1" /> },
+  { name: 'Jotai', icon: <TbAtom color="#61DAFB" /> },
+  { name: 'Redux Toolkit', icon: <SiRedux color="#764ABC" /> },
+  { name: 'FSD', icon: <TbLayoutDashboard color="#E8441F" /> },
   { name: 'Firebase', icon: <SiFirebase color="#FFCA28" /> },
   { name: 'Git', icon: <SiGit color="#F05032" /> },
   { name: 'GitLab', icon: <SiGitlab color="#FC6D26" /> },
+  { name: 'Ant Design', icon: <SiAntdesign color="#0170FE" /> },
 ];
 
 const Skills = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="skills" id="skills">
       <div className="container">
-        <h2 className="section-title">Skills</h2>
+        <h2 className="section-title">{t('skills.title')}</h2>
         <div className="skills__grid">
           {skills.map((skill) => (
             <div className="skills__card" key={skill.name}>

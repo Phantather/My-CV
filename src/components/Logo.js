@@ -15,17 +15,11 @@ const Logo = ({ size = 40 }) => (
       </linearGradient>
     </defs>
 
-    {/* Hexagon background */}
-    <path
-      d="M60 4L110 30V90L60 116L10 90V30L60 4Z"
-      fill="url(#logoGrad)"
-    />
+    {/* Circle background */}
+    <circle cx="60" cy="60" r="56" fill="url(#logoGrad)" />
 
-    {/* Inner hexagon cutout */}
-    <path
-      d="M60 14L102 36V84L60 106L18 84V36L60 14Z"
-      fill="var(--bg-secondary, #1e293b)"
-    />
+    {/* Inner circle cutout */}
+    <circle cx="60" cy="60" r="48" fill="var(--bg-secondary, #1e293b)" />
 
     {/* Letter A */}
     <path
@@ -38,9 +32,6 @@ const Logo = ({ size = 40 }) => (
       d="M72 32H78V56L98 32H106L86 56L107 88H99L82 60L78 65V88H72V32Z"
       fill="url(#logoGrad)"
     />
-
-    {/* Accent dot */}
-    <circle cx="100" cy="24" r="5" fill="#38bdf8" opacity="0.8" />
   </svg>
 );
 

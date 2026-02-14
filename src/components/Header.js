@@ -1,9 +1,19 @@
 import React, { useState } from 'react';
 import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
+import { useLanguage } from '../i18n/LanguageContext';
 import Logo from './Logo';
 
 const Header = ({ theme, toggleTheme }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const navItems = [
+    { id: 'home', label: t('nav.home') },
+    { id: 'skills', label: t('nav.skills') },
+    { id: 'experience', label: t('nav.experience') },
+    { id: 'portfolio', label: t('nav.portfolio') },
+    { id: 'contact', label: t('nav.contact') },
+  ];
 
   const scrollTo = (id) => {
     const el = document.getElementById(id);
@@ -24,19 +34,19 @@ const Header = ({ theme, toggleTheme }) => {
           </button>
 
           <ul className={`header__list ${menuOpen ? 'header__list--open' : ''}`}>
-            {['home', 'skills', 'experience', 'portfolio', 'contact'].map((section) => (
-              <li key={section} className="header__list-item">
+            {navItems.map((item) => (
+              <li key={item.id} className="header__list-item">
                 <button
                   className="header__link"
-                  onClick={() => scrollTo(section)}
+                  onClick={() => scrollTo(item.id)}
                 >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                  {item.label}
                 </button>
               </li>
             ))}
           </ul>
 
-          <button className="header__theme-btn" onClick={toggleTheme} title="Toggle theme">
+          <button className="header__theme-btn" onClick={toggleTheme} title={t('theme.toggle')}>
             {theme === 'dark' ? <FiSun /> : <FiMoon />}
           </button>
         </nav>

@@ -1,89 +1,92 @@
 import React from 'react';
 import { FiBriefcase } from 'react-icons/fi';
+import { useLanguage } from '../i18n/LanguageContext';
 import decImg from '../assets/dec.jpg';
 import itRunImg from '../assets/it-run.jpeg';
 import tundukImg from '../assets/tunduk.png';
 
-const experiences = [
-  {
-    company: '"Tunduk" OJSC',
-    role: 'Middle Front-End Engineer',
-    period: 'August 2025 - Present',
-    location: 'Bishkek, Kyrgyzstan',
-    image: tundukImg,
-    description: [
-      'Creation and optimization of modern digital solutions for improving educational institutions',
-      'Development of user interfaces for educational information systems',
-      'Working with the database',
-      'API Development',
-      'Code refactoring',
-    ],
-  },
-  {
-    company: 'Digital Education Center (MON KR)',
-    role: 'Front-End Engineer',
-    period: 'December 2023 - August 2025',
-    location: 'Bishkek, Kyrgyzstan',
-    image: decImg,
-    description: [
-      'Development of the "AIS Mugalim" project',
-      'Development of the "Vacancies" project',
-      'Development of the "Contests" project',
-      'Development of the "Testing" project',
-      'Development of user interfaces for educational information systems',
-    ],
-  },
-  {
-    company: 'Freelance',
-    role: 'Front-End Developer',
-    period: 'November 2023 - May 2025',
-    location: 'Bishkek, Kyrgyzstan',
-    description: [
-      'Freelance web development projects',
-    ],
-  },
-  {
-    company: 'IT-RUN Academy',
-    role: 'Front-End Mentor',
-    period: 'June 2021 - January 2025',
-    location: 'Bishkek, Kyrgyzstan',
-    image: itRunImg,
-    description: [
-      'Conducting classes on Front-End development',
-      'Front-End Mentor for Kids (30+ students)',
-      'Mentor Assistant (100+ students)',
-      'Accounting for student progress and attendance',
-    ],
-  },
-  {
-    company: 'Future',
-    role: 'Frontend Developer',
-    period: 'August 2022 - April 2023',
-    location: 'Bishkek, Kyrgyzstan',
-    description: [
-      'Website development',
-      'Working with SEO optimization',
-    ],
-  },
-  {
-    company: 'HST Technologies',
-    role: 'IT Specialist',
-    period: 'December 2018 - January 2020',
-    location: 'Naryn, Kyrgyzstan',
-    description: [
-      'Computer Repair',
-      'Check and manage over 500 devices',
-      'Flashing video cards, setting up motherboards and BIOS',
-      'Management and monitoring of the HIVE OS',
-    ],
-  },
-];
-
 const Works = () => {
+  const { t } = useLanguage();
+
+  const experiences = [
+    {
+      company: t('exp.tunduk.company'),
+      role: t('exp.tunduk.role'),
+      period: t('exp.tunduk.period'),
+      location: t('exp.tunduk.location'),
+      image: tundukImg,
+      description: [
+        t('exp.tunduk.desc1'),
+        t('exp.tunduk.desc2'),
+        t('exp.tunduk.desc3'),
+        t('exp.tunduk.desc4'),
+        t('exp.tunduk.desc5'),
+      ],
+    },
+    {
+      company: t('exp.dec.company'),
+      role: t('exp.dec.role'),
+      period: t('exp.dec.period'),
+      location: t('exp.dec.location'),
+      image: decImg,
+      description: [
+        t('exp.dec.desc1'),
+        t('exp.dec.desc2'),
+        t('exp.dec.desc3'),
+        t('exp.dec.desc4'),
+        t('exp.dec.desc5'),
+      ],
+    },
+    {
+      company: t('exp.freelance.company'),
+      role: t('exp.freelance.role'),
+      period: t('exp.freelance.period'),
+      location: t('exp.freelance.location'),
+      description: [
+        t('exp.freelance.desc1'),
+      ],
+    },
+    {
+      company: t('exp.itrun.company'),
+      role: t('exp.itrun.role'),
+      period: t('exp.itrun.period'),
+      location: t('exp.itrun.location'),
+      image: itRunImg,
+      description: [
+        t('exp.itrun.desc1'),
+        t('exp.itrun.desc2'),
+        t('exp.itrun.desc3'),
+        t('exp.itrun.desc4'),
+      ],
+    },
+    {
+      company: t('exp.future.company'),
+      role: t('exp.future.role'),
+      period: t('exp.future.period'),
+      location: t('exp.future.location'),
+      description: [
+        t('exp.future.desc1'),
+        t('exp.future.desc2'),
+      ],
+    },
+    {
+      company: t('exp.hst.company'),
+      role: t('exp.hst.role'),
+      period: t('exp.hst.period'),
+      location: t('exp.hst.location'),
+      description: [
+        t('exp.hst.desc1'),
+        t('exp.hst.desc2'),
+        t('exp.hst.desc3'),
+        t('exp.hst.desc4'),
+      ],
+    },
+  ];
+
   return (
     <section className="works" id="experience">
       <div className="container">
-        <h2 className="section-title">Experience</h2>
+        <h2 className="section-title">{t('experience.title')}</h2>
         <div className="works__timeline">
           {experiences.map((exp, idx) => (
             <div className="works__card" key={idx}>
@@ -105,11 +108,11 @@ const Works = () => {
         </div>
 
         <div className="works__education">
-          <h3 className="works__edu-title">Education</h3>
+          <h3 className="works__edu-title">{t('experience.education')}</h3>
           <div className="works__edu-card">
-            <h4>Naryn State University</h4>
-            <p>Bachelor of Science - Health Informatics and Biomedical Engineering</p>
-            <p className="works__edu-period">September 2018 - June 2022</p>
+            <h4>{t('edu.university')}</h4>
+            <p>{t('edu.degree')}</p>
+            <p className="works__edu-period">{t('edu.period')}</p>
           </div>
         </div>
       </div>
