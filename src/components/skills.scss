@@ -9,16 +9,43 @@
   }
 
   &__card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
+    position: relative;
+    background: var(--border);
     border-radius: 16px;
     padding: 2rem 1rem;
     text-align: center;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        transparent,
+        transparent,
+        transparent,
+        var(--accent)
+      );
+      animation: borderRotate 4s linear infinite;
+      z-index: -2;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      background: var(--bg-card);
+      border-radius: 14px;
+      z-index: -1;
+    }
 
     &:hover {
       transform: translateY(-6px);
-      border-color: var(--accent);
       box-shadow: 0 8px 25px var(--shadow);
     }
   }

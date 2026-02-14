@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiMail, FiPhone, FiLinkedin, FiMapPin, FiDownload } from 'react-icons/fi';
-import img from '../../../assets/20201228_181620-removebg-preview.png';
+import img from '../assets/photo.jpg';
 
 const Home = () => {
   return (
@@ -26,7 +26,7 @@ const Home = () => {
               <a href="mailto:akdil.hstech@gmail.com" className="home__contact-item">
                 <FiMail /> akdil.hstech@gmail.com
               </a>
-              <a href="www.linkedin.com/in/akdil-kubanychbekov" target="_blank" rel="noreferrer" className="home__contact-item">
+              <a href="http://linkedin.com/in/akdil-kubanychbekov" target="_blank" rel="noreferrer" className="home__contact-item">
                 <FiLinkedin /> LinkedIn
               </a>
               <span className="home__contact-item">

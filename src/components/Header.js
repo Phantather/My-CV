@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
-import Logo from '../../components/Logo';
+import Logo from './Logo';
 
 const Header = ({ theme, toggleTheme }) => {
   const [menuOpen, setMenuOpen] = useState(false);

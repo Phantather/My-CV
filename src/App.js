@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Header from './Layout/Header/Header';
-import Home from './pages/Main/Home/Home';
-import Skills from './pages/Main/Skills/Skills';
-import Works from './pages/Main/Works/Works';
-import Portfolio from './pages/Main/Portfolio/Portfolio';
-import Footer from './Layout/Footer/Footer';
+import Header from './components/Header';
+import Home from './components/Home';
+import Skills from './components/Skills';
+import Works from './components/Works';
+import Portfolio from './components/Portfolio';
+import Footer from './components/Footer';
 import './app.scss';
 
 function App() {

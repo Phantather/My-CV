@@ -1,7 +1,8 @@
 import React from 'react';
 import { FiBriefcase } from 'react-icons/fi';
-import monImg from '../../../assets/mon.gif';
-import tundukImg from '../../../assets/tunduk.png';
+import decImg from '../assets/dec.jpg';
+import itRunImg from '../assets/it-run.jpeg';
+import tundukImg from '../assets/tunduk.png';
 
 const experiences = [
   {
@@ -23,7 +24,7 @@ const experiences = [
     role: 'Front-End Engineer',
     period: 'December 2023 - August 2025',
     location: 'Bishkek, Kyrgyzstan',
-    image: monImg,
+    image: decImg,
     description: [
       'Development of the "AIS Mugalim" project',
       'Development of the "Vacancies" project',
@@ -46,6 +47,7 @@ const experiences = [
     role: 'Front-End Mentor',
     period: 'June 2021 - January 2025',
     location: 'Bishkek, Kyrgyzstan',
+    image: itRunImg,
     description: [
       'Conducting classes on Front-End development',
       'Front-End Mentor for Kids (30+ students)',

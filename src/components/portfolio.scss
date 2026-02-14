@@ -9,15 +9,42 @@
   }
 
   &__card {
+    position: relative;
     background: var(--bg-card);
-    border: 1px solid var(--border);
     border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    background: var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(
+        transparent,
+        transparent,
+        transparent,
+        var(--accent)
+      );
+      animation: borderRotate 4s linear infinite;
+      z-index: -2;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      background: var(--bg-card);
+      border-radius: 14px;
+      z-index: -1;
+    }
 
     &:hover {
       transform: translateY(-4px);
-      border-color: var(--accent);
       box-shadow: 0 8px 25px var(--shadow);
     }
 

@@ -76,14 +76,20 @@ img {
   background-clip: text;
 }
 
-/* ===== Header ===== */
-@import "./Layout/Header/header";
+/* ===== Animated Border ===== */
+@keyframes borderRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
-/* ===== Sections ===== */
-@import "./pages/Main/Home/home";
-@import "./pages/Main/Skills/skills";
-@import "./pages/Main/Works/works";
-@import "./pages/Main/Portfolio/portfolio";
-
-/* ===== Footer ===== */
-@import "./Layout/Footer/footer";
+/* ===== Components ===== */
+@import "./components/header";
+@import "./components/home";
+@import "./components/skills";
+@import "./components/works";
+@import "./components/portfolio";
+@import "./components/footer";
