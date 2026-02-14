@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useCallback} from 'react';
+import React, {useState, useEffect} from 'react';
 import {FiMail, FiPhone, FiLinkedin, FiMapPin, FiDownload, FiSend} from 'react-icons/fi';
 import imgWebp from '../assets/photo.webp';
 import imgJpg from '../assets/photo.jpg';
