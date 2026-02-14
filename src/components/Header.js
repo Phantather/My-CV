@@ -1,24 +1,11 @@
-import React, { useState } from 'react';
-import { FiSun, FiMoon, FiMenu, FiX } from 'react-icons/fi';
-import { useLanguage } from '../i18n/LanguageContext';
+import React from 'react';
+import { FiSun, FiMoon } from 'react-icons/fi';
 import Logo from './Logo';
 
 const Header = ({ theme, toggleTheme }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const { t } = useLanguage();
-
-  const navItems = [
-    { id: 'home', label: t('nav.home') },
-    { id: 'skills', label: t('nav.skills') },
-    { id: 'experience', label: t('nav.experience') },
-    { id: 'portfolio', label: t('nav.portfolio') },
-    { id: 'contact', label: t('nav.contact') },
-  ];
-
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
-    setMenuOpen(false);
   };
 
   return (
@@ -29,12 +16,8 @@ const Header = ({ theme, toggleTheme }) => {
             <Logo size={42} />
           </a>
 
-          <button className="header__burger" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <FiX /> : <FiMenu />}
-          </button>
-
-          <ul className={`header__list ${menuOpen ? 'header__list--open' : ''}`}>
-            {navItems.map((item) => (
+          <ul className="header__list">
+            {[{ id: 'home', label: 'About Me' }, { id: 'skills', label: 'Skills' }, { id: 'experience', label: 'Experience' }, { id: 'portfolio', label: 'Portfolio' }, { id: 'contact', label: 'Contact' }].map((item) => (
               <li key={item.id} className="header__list-item">
                 <button
                   className="header__link"
@@ -46,7 +29,7 @@ const Header = ({ theme, toggleTheme }) => {
             ))}
           </ul>
 
-          <button className="header__theme-btn" onClick={toggleTheme} title={t('theme.toggle')}>
+          <button className="header__theme-btn" onClick={toggleTheme} title="Toggle theme">
             {theme === 'dark' ? <FiSun /> : <FiMoon />}
           </button>
         </nav>

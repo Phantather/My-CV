@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { LanguageProvider } from './i18n/LanguageContext';
 import Header from './components/Header';
 import Home from './components/Home';
 import Skills from './components/Skills';
 import Works from './components/Works';
 import Portfolio from './components/Portfolio';
 import Footer from './components/Footer';
-import LanguageSwitcher from './components/LanguageSwitcher';
 import './app.scss';
 
 function App() {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('theme') || 'dark';
   });
+
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
@@ -23,20 +23,38 @@ function App() {
     setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
   };
 
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    setMenuOpen(false);
+  };
+
   return (
-    <LanguageProvider>
-      <div className="App">
-        <Header theme={theme} toggleTheme={toggleTheme} />
-        <main>
-          <Home />
-          <Skills />
-          <Works />
-          <Portfolio />
-        </main>
-        <Footer />
-        <LanguageSwitcher />
+    <div className="App">
+      <Header theme={theme} toggleTheme={toggleTheme} />
+      <main>
+        <Home />
+        <Skills />
+        <Works />
+        <Portfolio />
+      </main>
+      <Footer />
+
+      <div className={`mobile-menu ${menuOpen ? 'mobile-menu--open' : ''}`}>
+        {[{ id: 'home', label: 'About Me' }, { id: 'skills', label: 'Skills' }, { id: 'experience', label: 'Experience' }, { id: 'portfolio', label: 'Portfolio' }, { id: 'contact', label: 'Contact' }].map((item) => (
+          <button
+            key={item.id}
+            className="mobile-menu__link"
+            onClick={() => scrollTo(item.id)}
+          >
+            {item.label}
+          </button>
+        ))}
       </div>
-    </LanguageProvider>
+      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? '✕' : '☰'}
+      </button>
+    </div>
   );
 }
 

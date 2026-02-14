@@ -70,43 +70,12 @@
       border-color: var(--accent);
     }
   }
-
-  &__burger {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: var(--text-primary);
-    cursor: pointer;
-  }
 }
 
 @media (max-width: 768px) {
   .header {
-    &__burger {
-      display: flex;
-    }
-
     &__list {
       display: none;
-      position: absolute;
-      top: 64px;
-      left: 0;
-      width: 100%;
-      flex-direction: column;
-      background: var(--bg-secondary);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 0;
-      gap: 0;
-
-      &--open {
-        display: flex;
-      }
-
-      &-item {
-        text-align: center;
-        padding: 0.75rem 0;
-      }
     }
   }
 }

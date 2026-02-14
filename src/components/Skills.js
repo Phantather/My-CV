@@ -12,7 +12,6 @@ import {
   SiGit,
 } from 'react-icons/si';
 import { TbAtom, TbLayoutDashboard } from 'react-icons/tb';
-import { useLanguage } from '../i18n/LanguageContext';
 
 const skills = [
   { name: 'JavaScript', icon: <SiJavascript color="#F7DF1E" /> },
@@ -30,12 +29,10 @@ const skills = [
 ];
 
 const Skills = () => {
-  const { t } = useLanguage();
-
   return (
     <section className="skills" id="skills">
       <div className="container">
-        <h2 className="section-title">{t('skills.title')}</h2>
+        <h2 className="section-title">Skills</h2>
         <div className="skills__grid">
           {skills.map((skill) => (
             <div className="skills__card" key={skill.name}>
