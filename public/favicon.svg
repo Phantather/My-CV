@@ -1,13 +1,12 @@
 <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#818cf8"/>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
     </linearGradient>
   </defs>
-  <path d="M60 4L110 30V90L60 116L10 90V30L60 4Z" fill="url(#g)"/>
-  <path d="M60 14L102 36V84L60 106L18 84V36L60 14Z" fill="#0f172a"/>
-  <path d="M30 88L50 32H56L76 88H69L64 74H42L37 88H30ZM44 68H62L53 40L44 68Z" fill="url(#g)"/>
-  <path d="M72 32H78V56L98 32H106L86 56L107 88H99L82 60L78 65V88H72V32Z" fill="url(#g)"/>
-  <circle cx="100" cy="24" r="5" fill="#38bdf8" opacity="0.8"/>
+  <circle cx="60" cy="60" r="56" fill="url(#logoGrad)" />
+  <circle cx="60" cy="60" r="48" fill="#0f172a" />
+  <path d="M30 88L50 32H56L76 88H69L64 74H42L37 88H30ZM44 68H62L53 40L44 68Z" fill="url(#logoGrad)" />
+  <path d="M72 32H78V56L98 32H106L86 56L107 88H99L82 60L78 65V88H72V32Z" fill="url(#logoGrad)" />
 </svg>

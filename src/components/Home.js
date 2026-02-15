@@ -28,24 +28,24 @@ const useTypewriter = (text, speed = 80, delay = 0) => {
     return {displayed, done};
 };
 
-const Particles = () => {
+export const Particles = ({ count = 35, className = "particles" }) => {
     const [particles] = useState(() =>
-        Array.from({length: 20}, (_, i) => ({
+        Array.from({length: count}, (_, i) => ({
             id: i,
             x: Math.random() * 100,
             y: Math.random() * 100,
-            size: Math.random() * 4 + 2,
-            duration: Math.random() * 15 + 10,
-            delay: Math.random() * 5,
+            size: Math.random() * 3 + 2,
+            duration: Math.random() * 20 + 15,
+            delay: Math.random() * 10,
         }))
     );
 
     return (
-        <div className="home__particles">
+        <div className={className}>
             {particles.map((p) => (
                 <span
                     key={p.id}
-                    className="home__particle"
+                    className="particle"
                     style={{
                         left: `${p.x}%`,
                         top: `${p.y}%`,
@@ -66,7 +66,7 @@ const Home = () => {
 
     return (
         <section className="home" id="home">
-            <Particles/>
+            <Particles className="particles" />
             <div className="container">
                 <div className="home__row">
                     <div className="home__content">
@@ -76,7 +76,7 @@ const Home = () => {
                         </p>
                         <h1 className="home__name">
                             {name.displayed}
-                            {greeting.done && !name.done && <span className="home__cursor">|</span>}
+                            {greeting.done && <span className="home__cursor">|</span>}
                         </h1>
                         <p className="home__title">Middle Front-End Engineer</p>
                         <p className="home__subtitle">
@@ -112,7 +112,7 @@ const Home = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="home__photo">
+                    <div className={`home__photo ${greeting.done ? 'home__photo--active' : ''}`}>
                         <picture>
                             <source srcSet={imgWebp} type="image/webp"/>
                             <img src={imgJpg} alt="Akdil Kubanychbekov"/>

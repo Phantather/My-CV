@@ -18,9 +18,9 @@
   --bg-card: #ffffff;
   --text-primary: #0f172a;
   --text-secondary: #475569;
-  --accent: #2563eb;
-  --accent-hover: #3b82f6;
-  --accent-gradient: linear-gradient(135deg, #2563eb, #7c3aed);
+  --accent: #38bdf8;
+  --accent-hover: #7dd3fc;
+  --accent-gradient: linear-gradient(135deg, #38bdf8, #818cf8);
   --border: #e2e8f0;
   --shadow: rgba(0, 0, 0, 0.08);
 }
@@ -83,6 +83,42 @@ img {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* ===== Particles ===== */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0;
+  animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(0);
+  }
+  10% {
+    opacity: 0.6;
+    transform: translateY(-10px) scale(1);
+  }
+  90% {
+    opacity: 0.4;
+    transform: translateY(-120px) scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-140px) scale(0);
   }
 }
 

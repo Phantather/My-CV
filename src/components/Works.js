@@ -1,5 +1,6 @@
 import React from 'react';
 import { FiBriefcase } from 'react-icons/fi';
+import { Particles } from './Home';
 import decImg from '../assets/dec.jpg';
 import itRunImg from '../assets/it-run.jpeg';
 import tundukImg from '../assets/tunduk.png';
@@ -82,6 +83,7 @@ const experiences = [
 const Works = () => {
   return (
     <section className="works" id="experience">
+      <Particles count={30} />
       <div className="container">
         <h2 className="section-title">Experience</h2>
         <div className="works__timeline">
