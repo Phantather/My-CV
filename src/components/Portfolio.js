@@ -3,6 +3,7 @@ import { FiExternalLink, FiImage } from 'react-icons/fi';
 import ortImg from '../assets/portfolio/ort.png';
 import mugalimImg from '../assets/portfolio/mugalim.png';
 import vacanciesImg from '../assets/portfolio/vacancies.png';
+import contestsImg from '../assets/portfolio/contests.png';
 import hyundaiImg from '../assets/portfolio/hyundai.jpg';
 
 const projects = [
@@ -28,7 +29,7 @@ const projects = [
     title: 'Contests',
     description: 'Competition platform for educational sector',
     link: 'https://mugalim.edu.gov.kg/concurs/',
-    image: mugalimImg,
+    image: contestsImg,
   },
   {
     title: 'Hyundai KG',
